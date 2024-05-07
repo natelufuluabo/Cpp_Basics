@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cmath>
 
 void print_hashes(int largeur_banniere)
 {   
@@ -25,12 +26,16 @@ int main()
     print_banniere();
 
     int nombre_dacheteurs = 0;
-    float budget_total = 0;
-    float budgets_coproprietaires[nombre_dacheteurs];
-    float prix_propriete = 0;
-    float mise_de_fonds = 0;
-    float interet_annuel = 0;
+    double budget_total = 0;
+    double budgets_coproprietaires[nombre_dacheteurs];
+    double prix_propriete = 0;
+    double mise_de_fonds = 0;
+    double interet_annuel = 0;
     int periode_amortissement = 0;
+    double montant_pret = 0;
+    int nombre_total_versements = 0;
+    double versement_mensuel = 0;
+    double interet_mensuel = 0;
 
     bool faire_simulation = true;
 
@@ -92,5 +97,13 @@ int main()
             std::cin >> periode_amortissement;
         } while (periode_amortissement <= 0);
         
+        std::cout << "" << std::endl;
+
+        montant_pret = prix_propriete - mise_de_fonds;
+        interet_mensuel = (interet_annuel / 100) / 12;
+        nombre_total_versements = periode_amortissement * 12;
+        versement_mensuel = montant_pret * (interet_mensuel * (pow(1 + interet_mensuel, nombre_total_versements)) / ((pow(1 + interet_mensuel, nombre_total_versements)) - 1));
+
+        std::cout << "Le versement hypothécaire mensuel sera de $" << std::setprecision(2) << std::fixed << versement_mensuel << std::endl; 
     }
 }
