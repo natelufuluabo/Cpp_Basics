@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <cmath>
+#include <array>
 
 void print_hashes(int largeur_banniere)
 {   
@@ -120,5 +121,20 @@ int main()
             std::cout << "Avec un budget mensuel de $" << std::setprecision(2) << std::fixed << budget_total << ", vous pourrez acheter cette propriété." << std::endl;
             std::cout << "Il vous restera $" << std::setprecision(2) << std::fixed << difference << " en poche à chaque mois." << std::endl;
         }
+
+        std::cout << "" << std::endl;
+
+        char choix_utilisateur;
+        std::cout << "Voulez-vous reessayer? (O/n)? ";
+        std::cin >> choix_utilisateur;
+        
+        std::cout << "" << std::endl;
+
+        if (choix_utilisateur == 'n')
+        {
+            faire_simulation = false;
+        }
+
+        budget_total = 0;
     }
 }
