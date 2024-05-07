@@ -105,5 +105,20 @@ int main()
         versement_mensuel = montant_pret * (interet_mensuel * (pow(1 + interet_mensuel, nombre_total_versements)) / ((pow(1 + interet_mensuel, nombre_total_versements)) - 1));
 
         std::cout << "Le versement hypothécaire mensuel sera de $" << std::setprecision(2) << std::fixed << versement_mensuel << std::endl; 
+
+        if (versement_mensuel > budget_total)
+        {
+            double difference = versement_mensuel - budget_total;
+            std::cout << "Avec un budget mensuel de $" << std::setprecision(2) << std::fixed << budget_total << ", vous ne pourrez malheureusement pas acheter cette propriété. Il vous manquera $" << std::setprecision(2) << std::fixed << difference << " à chaque mois." << std::endl;
+            montant_pret = budget_total / (interet_mensuel * (pow(1 + interet_mensuel, nombre_total_versements)) / ((pow(1 + interet_mensuel, nombre_total_versements)) - 1));
+            double prix_max = montant_pret + mise_de_fonds;
+            std::cout << "Le prix de propriété max que vous pouvez vous permettre est de $" << std::setprecision(2) << std::fixed << prix_max << std::endl;
+        }
+        else 
+        {
+            double difference = budget_total - versement_mensuel;
+            std::cout << "Avec un budget mensuel de $" << std::setprecision(2) << std::fixed << budget_total << ", vous pourrez acheter cette propriété." << std::endl;
+            std::cout << "Il vous restera $" << std::setprecision(2) << std::fixed << difference << " en poche à chaque mois." << std::endl;
+        }
     }
 }
