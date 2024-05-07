@@ -25,12 +25,12 @@ int main()
     print_banniere();
 
     int nombre_dacheteurs = 0;
-    float budget_total;
+    float budget_total = 0;
     float budgets_coproprietaires[nombre_dacheteurs];
-    float prix_propriete;
-    float mise_de_fonds;
-    float interet_annuel;
-    int periode_amortissement;
+    float prix_propriete = 0;
+    float mise_de_fonds = 0;
+    float interet_annuel = 0;
+    int periode_amortissement = 0;
 
     bool faire_simulation = true;
 
@@ -65,5 +65,32 @@ int main()
         }
 
         std::cout << "Ok! Votre budget mensuel total est de $" << std::setprecision(2) << std::fixed << budget_total << std::endl;
+
+        std::cout << "" << std::endl;
+
+        do
+        {
+            std::cout << "Prix de la propriété ($): ";
+            std::cin >> prix_propriete;
+        } while (prix_propriete <= 0);
+        
+        do
+        {
+            std::cout << "Mise de fonds ($): ";
+            std::cin >> mise_de_fonds;
+        } while (mise_de_fonds <= 0);
+        
+        do
+        {
+            std::cout << "Taux d'intérêt annuel (%): ";
+            std::cin >> interet_annuel;
+        } while (interet_annuel <= 0);
+        
+        do
+        {
+            std::cout << "Amortissement (années): ";
+            std::cin >> periode_amortissement;
+        } while (periode_amortissement <= 0);
+        
     }
 }
