@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 void print_hashes(int largeur_banniere)
 {   
@@ -41,8 +42,6 @@ int main()
             std::cin >> nombre_dacheteurs;
         } while (nombre_dacheteurs <= 0);
 
-        std::cout << nombre_dacheteurs << std::endl;
-
         if (nombre_dacheteurs == 1)
         {
             do
@@ -65,6 +64,6 @@ int main()
             }
         }
 
-        std::cout << "Votre budget total est: " << budget_total << std::endl;
+        std::cout << "Ok! Votre budget mensuel total est de $" << std::setprecision(2) << std::fixed << budget_total << std::endl;
     }
 }
