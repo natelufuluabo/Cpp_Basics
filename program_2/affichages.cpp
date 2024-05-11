@@ -17,3 +17,11 @@ void affiche_banniere(std::string titre)
     std::cout << titre << std::endl;
     imprimer_hash(largeur_banniere);
 }
+
+void afficher_menu_principal()
+{
+    std::cout << "\nMenu Principal" << std::endl;
+    std::cout << "1. Créer un compte" << std::endl;
+    std::cout << "2. Se connecter" << std::endl;
+    std::cout << "3. Quitter\n" << std::endl;
+}
