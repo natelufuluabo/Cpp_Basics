@@ -25,3 +25,12 @@ void afficher_menu_principal()
     std::cout << "2. Se connecter" << std::endl;
     std::cout << "3. Quitter\n" << std::endl;
 }
+
+void afficher_menu_utilisateur()
+{
+    std::cout << "\nMenu Utilisateur" << std::endl;
+    std::cout << "1. Envoyer de l'argent" << std::endl;
+    std::cout << "2. Consulter mon solde" << std::endl;
+    std::cout << "3. Consulter mes transactions" << std::endl;
+    std::cout << "4. Se déconnecter" << std::endl;
+}
