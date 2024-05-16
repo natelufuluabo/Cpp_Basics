@@ -1,5 +1,6 @@
-#include <iostream>
 #include "affichages.h"
+#include "utilitaires.h"
+#include <iostream>
 
 using namespace std;
 
