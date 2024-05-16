@@ -3,14 +3,14 @@
 #include <sstream>
 #include "affichages.h"
 
-int convertir_dollars_vers_centimes(float montant_en_dollars)
+int convertir_dollars_vers_centimes(double montant_en_dollars)
 {
     return montant_en_dollars * 100;
 }
 
 std::string formater_argent(int montant_en_centimes)
 {
-    float montant_en_dollar = (float) montant_en_centimes/ 100;
+    double montant_en_dollar = (double) montant_en_centimes/ 100;
 
     std::string number_str = std::to_string(montant_en_dollar);
     size_t point_position = number_str.find('.'); 
