@@ -1,20 +1,27 @@
 #include <iostream>
 #include <string>
-#include <sstream>
+#include <fstream>
 #include "affichages.h"
+
+using namespace std;
+
+void garantir_existence_fichier(string chemin_fichier)
+{
+    ofstream fichier(chemin_fichier, ios::app);
+}
 
 int convertir_dollars_vers_centimes(double montant_en_dollars)
 {
-    return montant_en_dollars * 100;
+    return (int) montant_en_dollars * 100;
 }
 
-std::string formater_argent(int montant_en_centimes)
+string formater_argent(int montant_en_centimes)
 {
     double montant_en_dollar = (double) montant_en_centimes/ 100;
 
-    std::string number_str = std::to_string(montant_en_dollar);
+    string number_str = to_string(montant_en_dollar);
     size_t point_position = number_str.find('.'); 
-    if (point_position != std::string::npos) {
+    if (point_position != string::npos) {
         number_str = number_str.substr(0, point_position + 3); 
     }
 
