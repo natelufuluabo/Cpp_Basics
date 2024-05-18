@@ -1,15 +1,12 @@
 #include "affichages.h"
 #include "utilitaires.h"
+#include "configurations.h"
 #include <iostream>
 
 using namespace std;
 
 int main()
 {   
-    string const fichier_utilisateurs = "utilisateurs.txt";
-    string const fichier_transactions = "transactions.txt";
-    string const nom_utilisateur_admin = "ift-1004-union";
-    int const solde_initial = convertir_dollars_vers_centimes(1000);
     bool continuer = true;
 
     garantir_existence_fichier(fichier_utilisateurs);

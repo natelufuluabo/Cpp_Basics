@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "affichages.h"
+#include "utilitaires.h"
 
 using namespace std;
 
