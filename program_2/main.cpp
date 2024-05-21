@@ -1,6 +1,7 @@
 #include "affichages.h"
 #include "utilitaires.h"
 #include "configurations.h"
+#include "gestion_utilisateurs.h"
 #include <iostream>
 
 using namespace std;
@@ -25,7 +26,7 @@ int main()
 
         if (action == '1')
         {
-            cout << "Option 1 picked" << endl;
+            enregistrer_utilisateur();
         }
         else if (action == '2')
         {
